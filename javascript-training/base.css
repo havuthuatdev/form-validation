@@ -1,0 +1,13 @@
+:root{
+    --white-color: #fff;
+    --black-color: #000;
+    --primary-color: #F6432E;
+    --text-color: #333;
+    --boder-color: #dbdbdb;
+}
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    background-color: rosybrown;
+}
