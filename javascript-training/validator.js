@@ -11,14 +11,14 @@ function Validator(options) {
             // console.log(inputElement);
 
             if (inputElement) {
-                inputElement.onblur = function (){
-                    var errormessage = rule.test(inputElement.value); 
+                inputElement.onblur = function () {
+                    var errormessage = rule.test(inputElement.value);
                     var errorElement = inputElement.parentElement.querySelector("#error-message");
                     // console.log(errormessage)
                     if (errormessage) {
                         errorElement.innerHTML = errormessage;
                         // console.log(inputElement.parentElement.querySelector("#error-message"));
-                    }else{
+                    } else {
                         errorElement.innerHTML = " ";
                         // formElement.querySelector(rule.selector).classList.remove("form-message");
 
@@ -59,6 +59,15 @@ Validator.isPassword = function (selector, min) {
         selector: selector,
         test: function (value) {
             return value.length >= min ? undefined : `Mật khẩu ít nhất ${min} ký tự`;
+
+        }
+    }
+}
+Validator.isConfirmed = function (selector, getConfirmValue) {
+    return {
+        selector: selector,
+        test: function (value) {
+            return value == getConfirmValue() ? undefined : "Giá trị nhập vào không chính xác";
 
         }
     }

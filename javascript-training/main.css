@@ -21,9 +21,10 @@
     /* justify-content: center; */
     text-align: center;
 }
-.content__name-tittle{
-    font-size: 1.2rem;
-}
+/* .content__name-tittle{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.2rem;
+} */
 .header__header{
     color: var(--primary-color);
 }
@@ -43,7 +44,10 @@
     font-size: 1.4rem;
 }
 .content__name-input{
-    margin-top: 5px;
+    border: 1.2px solid #666;
+    margin-top: 3px;
+    outline: none;
+    border-radius: 2.5px;
 }
 .register{
     display: flex;
@@ -58,4 +62,18 @@
 }
 .form-message{
     color: red;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 1rem;
+    color: #999;
+  }
+.register__button{
+    border: 1.2px solid #19A294;
+    outline: none;
+    color: white;
+}
+.content__name-input:focus{
+    /* color: black; */
+    /* border: 1px solid #19A294; */
+    border-color: #19A294;
 }

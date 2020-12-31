@@ -20,22 +20,22 @@
             <div class="content">
                 <div class="content__div">
                     <label for="" class="content__name-tittle">Tên đầy đủ</label>
-                    <input type="text" class="content__name-input" placeholder="tên của bạn" id="FullName">
+                    <input type="text" class="content__name-input" placeholder="VD: Ha Vu Thuat" id="FullName">
                     <span class="form-message" id="error-message"></span>
                 </div>
                 <div class="content__div">
                     <label for="" class="content__name-tittle">Email</label>
-                    <input type="text" class="content__name-input" placeholder="Email của bạn" id="Email">
+                    <input type="text" class="content__name-input" placeholder="VD: Thuat@gmail.com" id="Email">
                     <span class="form-message" id="error-message"></span>
                 </div>
                 <div class="content__div">
                     <label for="" class="content__name-tittle">Mật khẩu</label>
-                    <input type="text" class="content__name-input" placeholder="mật khẩu" id ="Password">
+                    <input type="password" class="content__name-input"  placeholder="mật khẩu" id ="Password">
                     <span class="form-message" id="error-message"></span>
                 </div>
                 <div class="content__div">
                     <label for="" class="content__name-tittle">Nhập lại mật khẩu</label>
-                    <input type="text" class="content__name-input" placeholder="nhập lại mật khẩu" id ="retypePassword">
+                    <input type="password" class="content__name-input" placeholder="nhập lại mật khẩu" id ="confirmPassword">
                     <span class="form-message" id="error-message"></span>
                 </div>
                 <div class="register">
@@ -55,7 +55,10 @@
                 rules: [
                     Validator.isRequired('#FullName'),
                     Validator.isEmail('#Email'),
-                    Validator.isPassword('#Password', 6)
+                    Validator.isPassword('#Password', 6),
+                    Validator.isConfirmed('#confirmPassword', function(){
+                        return  document.querySelector("#Password").value;
+                    })
                 ]
             }
         );
