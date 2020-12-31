@@ -11,7 +11,7 @@
 }
 .form-register{
     width: 300px;
-    height: 370px;
+    height: 420px;
     background-color: white;
     border-radius: 2px solid red;
 }
@@ -55,4 +55,7 @@
     border: solid #19A294;
     border-radius: 4px;
     width: 100%;
+}
+.form-message{
+    color: red;
 }
